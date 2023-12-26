@@ -6,17 +6,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
  
-'''
-!!!! Usefull links !!!!! 
-https://github.com/googleapis/google-api-python-client
-https://developers.google.com/docs/api/quickstart/python
  
-https://github.com/youtube/api-samples
-https://developers.google.com/youtube/v3/docs
-https://developers.google.com/youtube/v3/determine_quota_cost
-'''
- 
-API_KEY = '*********'
+API_KEY = ''
  
 APP_TOKEN_FILE = "client_secret.json"
 USER_TOKEN_FILE = "user_token.json"
@@ -29,16 +20,12 @@ SCOPES = [
     # 'https://www.googleapis.com/auth/userinfo.email'
 ]
  
-'''
-Ask from console
-'''
+
 def get_creds_cons():
     flow = InstalledAppFlow.from_client_secrets_file(APP_TOKEN_FILE, SCOPES)
     return flow.run_console()
  
-'''
-Reusebale user OAuth2 token
-'''
+
 def get_creds_saved():
     # https://developers.google.com/docs/api/quickstart/python
     creds = None
