@@ -7,17 +7,17 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
  
  
-API_KEY = 'AIzaSyDKX7stvwNnsEtqCmBYmR0PrDfKwQrN6fE'
+API_KEY = 'AIzaSyByS5JL2bTmI9UtpnXLoLRDARDAfah7Zrg'
  
-APP_TOKEN_FILE = "client_secrets.json"
+APP_TOKEN_FILE = "/Users/ajzanylsabdanbekova/Desktop/python/api/youtube/client_secrets.json"
 USER_TOKEN_FILE = "user_token.json"
  
 # https://developers.google.com/identity/protocols/oauth2/scopes#youtube
 SCOPES = [
     'https://www.googleapis.com/auth/youtube.force-ssl',
     'https://www.googleapis.com/auth/userinfo.profile',
-    # 'https://www.googleapis.com/auth/youtube.upload',
-    # 'https://www.googleapis.com/auth/userinfo.email'
+    'https://www.googleapis.com/auth/youtube.upload',
+    'https://www.googleapis.com/auth/userinfo.email'
 ]
  
 
@@ -30,8 +30,8 @@ def get_creds_saved():
     # https://developers.google.com/docs/api/quickstart/python
     creds = None
  
-    if os.path.exists(USER_TOKEN_FILE):
-        creds = Credentials.from_authorized_user_file(USER_TOKEN_FILE, SCOPES)
+    if os.path.exists(APP_TOKEN_FILE):
+        creds = Credentials.from_authorized_user_file(APP_TOKEN_FILE, SCOPES)
  
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
