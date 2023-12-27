@@ -7,9 +7,9 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
  
  
-API_KEY = ''
+API_KEY = 'AIzaSyDKX7stvwNnsEtqCmBYmR0PrDfKwQrN6fE'
  
-APP_TOKEN_FILE = "client_secret.json"
+APP_TOKEN_FILE = "client_secrets.json"
 USER_TOKEN_FILE = "user_token.json"
  
 # https://developers.google.com/identity/protocols/oauth2/scopes#youtube
